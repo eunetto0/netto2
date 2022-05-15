@@ -1,0 +1,681 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <title>РискПроф</title>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="theme-color" content="#fff">
+    <link href="Content/External/Table/img/icons/risk-prof-5.ico" rel="icon" runat="server" type="image/ico">
+    <link href="Content/External/Table/img/icons/risk-prof-5.ico" rel="shortcut icon" runat="server" type="image/x-icon">
+
+    
+    <link href="Content/External/Table/css/magnific-popup-5.css" rel="stylesheet">
+    
+    <link href="Content/External/fancybox2/jquery.fancybox-5.css" rel="stylesheet">
+    
+    <link href="Content/System/ModalDialogV2-5.css?v=2021.11.19" rel="stylesheet">
+    
+    <link href="Content/System/ModalDialogV3-5.css?v=2022.04.25" rel="stylesheet">
+    
+    <link href="Content/External/Bootstrap/css/bootstrap-dialog.min-5.css" rel="stylesheet">
+
+
+
+    <link href="Content/External/font-awesome-4.7.0/css/font-awesome.min-5.css?v=2021.11.19.2" rel="stylesheet">
+    
+    <link href="Content/External/Bootstrap/css/animate.min-5.css" rel="stylesheet">
+    
+    <link href="Content/External/jquery-ui-5.css" rel="stylesheet">
+
+
+    
+    <link href="Content/External/Bootstrap/css/bootstrap-select.min-5.css" rel="stylesheet">
+    
+    <link href="Content/External/Bootstrap/css/bootstrap-datetimepicker.min-5.css" rel="stylesheet">
+    
+    <link href="Content/External/Bootstrap/css/bootstrap-dropdownhover.min-5.css" rel="stylesheet">
+    
+    <link href="Content/External/JQuery/jquery.contextMenu.min-5.css" rel="stylesheet">
+
+
+    
+    <link href="Content/External/Bootstrap/css/select2.min-5.css" rel="stylesheet">
+
+    <link href="Content/External/Bootstrap/css/bootstrap.min-5.css" rel="stylesheet">
+    <link href="Content/External/DataTables/datatables.min-5.css" rel="stylesheet">
+
+
+    
+    <link href="Content/External/Bootstrap/css/bootstrap_teu-5.css?v=2021.11.19" rel="stylesheet">
+    
+    
+    <link href="Content/System/style.min-5.css?v=2021.11.19" rel="stylesheet">
+    
+    <link href="Content/System/layout-6.css?v=2022.05.13" rel="stylesheet">
+    <link href="Content/External/Table/css/DataTables/tableStyle-5.css" rel="stylesheet">
+
+    <script src="Content/External/JQuery/jquery.min-5.js"></script>
+    <script src="Content/External/JQuery/moment-5.js"></script>
+    <script src="Content/External/JQuery/ru-5.js"></script>
+    <script src="Content/External/jquery-ui-5.js"></script>
+    <script src="Content/External/Bootstrap/js/bootstrap.bundle.min-5.js"></script>
+    <script src="Content/External/DataTables/datatables.min-5.js"></script>
+    <script src="Content/External/DataTables/DataTablesScrollBody-5.js?v=2022.02.24"></script>
+    <script src="Content/External/JQuery/jquery.validate.min-5.js"></script>
+    <script src="Content/External/fancybox2/jquery.fancybox.pack-5.js"></script>
+    <script src="Content/System/eventRouter-6.js?v=2022.05.13"></script>
+    <script src="Content/System/RiskProf/riskprof.config-5.js?v=2022.02.16"></script>
+    <script src="Content/System/RiskProf/riskprof.resolved-5.js?v=2021.11.19"></script>
+    <script src="Content/System/filePaths-5.js?v=2021.12.09"></script>
+
+        <script src="Content/System/RiskProf/riskprof-5.js?v=2021.11.19"></script>
+        <script src="Content/System/RiskProf.Auth.API/riskprof.auth-5.js?v=2021.12.10"></script>
+    <!-- DevExtreme library -->
+    
+
+
+
+    
+    <link href="Content/External/css/style-5.css?v=2022.03.18" rel="stylesheet">
+
+    <!-- DevExtreme theme -->
+    <!--<link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/21.2.4/css/dx.light.css">-->
+    
+
+
+    <style>
+        .bootstrap-dialog-close-button .close, .modal-header .close span {
+            background-color: white;
+            padding: 0 10px !important;
+            border-radius: 15%;
+            margin: auto;
+            color: black;
+            text-shadow: none;
+        }
+
+            .bootstrap-dialog-close-button .close:hover, .modal-header .close span:hover {
+                background-color: red;
+                color: white;
+            }
+
+        .labelForm {
+            margin-top: 10px;
+        }
+
+        .error {
+            color: red;
+        }
+
+        .std::after {
+            position: inherit !important;
+            right: 0px !important;
+            transform: translateY(0%) !important;
+        }
+
+        .menu {
+            padding: 0 !important;
+        }
+
+        .dropdown-menu > a:focus, .dropdown-menu > a:hover {
+            background-image: -moz-linear-gradient(top, #212529 0%, #161F3B 100%);
+            background-image: -o-linear-gradient(top, #212529 0%, #161F3B 100%);
+            background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #212529), color-stop(1, #161F3B));
+            background-image: -webkit-linear-gradient(top, #212529 0%, #161F3B 100%);
+            background-image: linear-gradient(to bottom, #212529 0%, #161F3B 100%);
+            color: #f8f9fa !important;
+        }
+
+        #img {
+            height: 30px;
+        }
+
+        .box {
+            position: relative;
+        }
+
+        .panel-content {
+            overflow-y: scroll;
+            margin: 0px;
+            padding: 0px;
+            width: 100%;
+            height: 240px;
+        }
+
+            .panel-content li {
+                list-style: none;
+                border-bottom: 1px solid rgba(0,0,0,.1);
+                width: 350px;
+                height: 80px;
+                padding: 5px;
+                /*display: flex;*/
+            }
+
+        .list-group-item list div {
+            font-family: "PTSans", "Arial", "Helvetica", sans-serif;
+        }
+
+        label.error {
+            margin-bottom: 0px !important;
+        }
+
+        .form-control.error {
+            border: 1px solid red;
+            border-top-right-radius: .25rem !important;
+            border-bottom-right-radius: .25rem !important;
+        }
+
+            .form-control.error:focus {
+                border-color: red;
+                box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 0.25);
+            }
+
+
+        .bootstrap-dialog-close-button {
+            display: block !important;
+        }
+
+        .picker-open {
+            z-index: 1060;
+        }
+
+        .select2-search--dropdown {
+            display: none;
+        }
+
+        #sidebar {
+            position: fixed;
+            left: 0;
+            width: 240px;
+        }
+
+            #sidebar:not(.active) {
+                overflow-y: auto;
+            }
+
+        .btn-outline-red {
+            color: #C02032;
+            border-color: #C02032;
+        }
+
+            .btn-outline-red:not(:disabled):not(.disabled):active {
+                color: white;
+                background-color: #C02032;
+            }
+
+            .btn-outline-red:hover {
+                color: white;
+                background-color: #C02032;
+                border-color: #C02032;
+            }
+
+        .b24-widget-button-wrapper {
+            display: none !important;
+        }
+
+        @media (min-width: 1345px) {
+            .header-search {
+                display: block !important;
+            }
+        }
+    </style>
+</head>
+<body id="body">
+    <script type="text/javascript">(function (m, e, t, r, i, k, a) { m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) }; m[i].l = 1 * new Date(); k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a) })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym(61732957, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true, webvisor: true, trackHash: true });</script> <noscript><div><img src="watch/61732957-5" style="position:absolute; left:-9999px;" alt=""></div></noscript> <!-- /Yandex.Metrika counter -->
+    
+
+    <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+            <symbol id="icon-risk" viewbox="0 0 41 45">
+                <path d="M26.1002 7.6C24.9002 16.8 21.0002 25.1 15.0002 31C16.3002 32.8 18.0002 34.2 18.0002 34.2C23.9002 28.4 28.0002 20.6 29.8002 12H35.8002C34.5002 23.6 28.8002 33.8 20.3002 39.7C16.7002 37.2 13.6002 33.9 11.1002 30C14.9002 26.6 17.9002 22.4 20.0002 17.5C21.3002 14.4 22.2002 11.1 22.7002 7.6H0.200195C0.400195 22.9 7.7002 37 19.2002 44.2L20.4002 44.9L21.6002 44.2C33.0002 37 40.2002 23 40.4002 7.6H26.1002ZM17.3002 12C15.7002 17.6 12.9002 22.3 8.90019 26.1C6.80019 21.8 5.40019 17 4.90019 12H17.3002Z"></path>
+                <path d="M40.5002 0H0.200195V4.6H40.5002V0Z"></path>
+            </symbol>
+            <symbol id="icon-support_agent" viewbox="0 0 24 24">
+                <path d="M21 12.234q0-2.063-0.727-3.75t-1.992-2.93-2.883-1.898-3.398-0.656-3.375 0.656-2.883 1.875-2.016 2.93-0.727 3.82q-0.469 0.234-0.727 0.703t-0.258 1.031v1.969q0 0.844 0.586 1.43t1.383 0.586h1.031v-6.094q0-1.453 0.539-2.719t1.5-2.227 2.227-1.5 2.719-0.539 2.719 0.539 2.227 1.5 1.5 2.227 0.539 2.719v7.078h-7.969v2.016h7.969q0.844 0 1.43-0.586t0.586-1.43v-1.219q0.422-0.234 0.703-0.656t0.281-0.984v-2.297q0-0.516-0.281-0.938t-0.703-0.656zM8.016 12.984q0-0.422 0.281-0.703t0.703-0.281 0.703 0.281 0.281 0.703-0.281 0.727-0.703 0.305-0.703-0.305-0.281-0.727zM14.016 12.984q0-0.422 0.281-0.703t0.703-0.281 0.703 0.281 0.281 0.703-0.281 0.727-0.703 0.305-0.703-0.305-0.281-0.727zM18 11.016q-0.234-1.406-1.078-2.555t-2.109-1.805-2.766-0.656q-1.125 0-2.25 0.445t-2.016 1.289-1.383 2.039-0.398 2.695q1.875-0.797 3.188-2.344t1.688-3.563q0.656 1.313 1.734 2.32t2.461 1.57 2.93 0.563z"></path>
+            </symbol>
+            <symbol id="icon-clipboard" viewbox="0 0 32 32">
+                <path d="M7.903 7.023c0 0.55 0 1.993 0 1.993h14.014c0 0 0-1.443 0-1.993s-0.445-0.997-0.996-0.997h-2.99c0 0 0.034-1.138 0.034-2.882 0-1.619-1.404-3.098-3.086-3.098s-2.978 1.406-2.978 3.089c0 1.619-0.012 2.891-0.012 2.891h-2.989c-0.551 0-0.997 0.446-0.997 0.997zM14.879 3.037c0.55 0 0.997 0.446 0.997 0.996 0 0.551-0.447 0.997-0.997 0.997s-0.997-0.446-0.997-0.997c0-0.55 0.447-0.996 0.997-0.996zM23.911 6.026v9.901c0 0 0.86-0.949 1.992-1.404v-9.493c0-1.101-0.955-1.993-2.055-1.993h-4.921v1.993h3.986c0.551 0 0.998 0.446 0.998 0.996zM12.823 30.006h-5.917c-0.55 0-0.996-0.445-0.996-0.996v-22.984c0-0.55 0.446-0.996 0.996-0.996h4.049v-1.993h-5.045c-1.101 0-1.993 0.893-1.993 1.993v24.976c0 1.101 0.892 1.994 1.993 1.994h9.081c-0.39-0.658-1.087-1.418-2.168-1.994zM23.911 29.010c0 0.551-0.447 0.996-0.997 0.996h-2.729c-0.502 0.672-0.975 1.34-1.41 1.994h5.074c1.1 0 2.055-0.893 2.055-1.994v-6.129c-0.66 0.543-1.328 1.156-1.992 1.83v3.303zM28.083 20.926c-1.123-2.496-0.48-4.523-0.32-6.863-6.579 3.275-10.751 13.103-10.751 13.103l-2.567-4.836-5.295 3.119c2.247 0.779 5.456 3.275 8.184 6.551 1.924-3.432 7.861-10.449 10.749-11.074z"></path>
+            </symbol>
+            <symbol id="icon-redux" viewbox="0 0 32 32">
+                <path d="M22.177 22.005c1.159-0.1 2.057-1.12 1.999-2.339-0.061-1.219-1.060-2.197-2.277-2.197h-0.081c-1.257 0.041-2.237 1.099-2.197 2.359 0.040 0.639 0.301 1.159 0.659 1.537-1.397 2.717-3.495 4.715-6.672 6.393-2.137 1.117-4.395 1.539-6.592 1.239-1.837-0.259-3.275-1.080-4.155-2.397-1.317-1.999-1.437-4.155-0.34-6.312 0.801-1.559 1.999-2.697 2.799-3.257-0.2-0.519-0.44-1.397-0.56-2.056-5.915 4.236-5.313 10.028-3.516 12.765 1.339 1.997 4.076 3.275 7.072 3.275 0.799 0 1.639-0.059 2.457-0.259 5.195-0.999 9.129-4.115 11.387-8.709zM29.308 17.011c-3.095-3.636-7.651-5.633-12.845-5.633h-0.68c-0.337-0.739-1.116-1.199-1.996-1.199h-0.060c-1.257 0-2.237 1.080-2.196 2.337 0.040 1.197 1.059 2.197 2.277 2.197h0.099c0.9-0.040 1.679-0.6 1.997-1.399h0.74c3.079 0 5.993 0.899 8.651 2.656 2.036 1.339 3.496 3.096 4.315 5.195 0.717 1.717 0.679 3.396-0.060 4.796-1.139 2.196-3.057 3.356-5.593 3.356-1.599 0-3.156-0.5-3.956-0.859-0.479 0.397-1.279 1.057-1.859 1.457 1.757 0.797 3.536 1.257 5.253 1.257 3.896 0 6.791-2.196 7.891-4.315 1.197-2.397 1.099-6.432-1.959-9.888zM8.653 22.723c0.039 1.199 1.057 2.197 2.277 2.197h0.080c1.279-0.040 2.257-1.097 2.197-2.357 0-1.199-1.039-2.196-2.257-2.196h-0.081c-0.080 0-0.199 0-0.3 0.039-1.657-2.797-2.357-5.795-2.096-9.028 0.159-2.437 0.959-4.556 2.396-6.313 1.199-1.499 3.456-2.239 4.995-2.277 4.315-0.081 6.113 5.295 6.252 7.432l1.997 0.599c-0.46-6.552-4.533-9.989-8.429-9.989-3.656 0-7.031 2.657-8.391 6.553-1.857 5.195-0.639 10.188 1.639 14.184-0.199 0.26-0.319 0.719-0.279 1.157z"></path>
+            </symbol>
+            <symbol id="icon-cycle" viewbox="0 0 32 32">
+                <path d="M16 0c-8.711 0-15.796 6.961-15.995 15.624 0.185-7.558 5.932-13.624 12.995-13.624 7.18 0 13 6.268 13 14 0 1.657 1.343 3 3 3s3-1.343 3-3c0-8.837-7.163-16-16-16zM16 32c8.711 0 15.796-6.961 15.995-15.624-0.185 7.558-5.932 13.624-12.995 13.624-7.18 0-13-6.268-13-14 0-1.657-1.343-3-3-3s-3 1.343-3 3c0 8.837 7.163 16 16 16z"></path>
+            </symbol>
+            <symbol id="icon-factory" viewbox="0 0 32 32">
+                <path d="M13.348 1.19c-1.165 0.202-2.22 0.558-3.458 1.177-0.914 0.46-1.079 0.595-1.079 0.907 0 0.258 0.135 0.546 0.288 0.613 0.061 0.031 0.564 0.055 1.122 0.061 1.294 0.012 1.864 0.129 3.648 0.742 3.562 1.22 4.126 1.373 5.469 1.496 2.281 0.202 4.623-0.478 7.13-2.091 0.497-0.313 0.613-0.478 0.613-0.828 0-0.282-0.276-0.576-0.546-0.576-0.098 0-0.509 0.086-0.908 0.19-0.552 0.141-0.914 0.196-1.527 0.221-1.349 0.061-2.268-0.135-4.567-0.963-1.465-0.527-2.385-0.797-3.268-0.95-0.662-0.111-2.256-0.117-2.918-0z"></path>
+                <path d="M3.11 4.949c-0.123 0.123-0.178 0.258-0.208 0.478-0.202 1.582-2.612 24.91-2.581 25.020 0.018 0.086 0.11 0.221 0.196 0.3l0.159 0.147h9.668l0.196-0.178c0.184-0.165 0.202-0.208 0.19-0.509-0.006-0.178-0.595-5.836-1.306-12.568-0.705-6.738-1.287-12.292-1.287-12.348s-0.092-0.19-0.208-0.307l-0.208-0.208h-4.439l-0.172 0.172z"></path>
+                <path d="M10.51 15.243c-0.012 0.031 0.337 3.427 0.772 7.559 0.65 6.143 0.785 7.565 0.736 7.804l-0.061 0.288h9.662c9.061 0 9.668-0.012 9.791-0.11 0.074-0.055 0.165-0.165 0.202-0.239 0.049-0.098 0.068-2.189 0.068-7.468 0-8.13 0.025-7.614-0.398-7.792-0.178-0.074-1.741-0.086-10.478-0.086-5.646 0-10.282 0.019-10.294 0.043zM18.259 17.934c0.356 0.178 0.362 0.245 0.362 3.188 0 2.973 0 2.992-0.398 3.176-0.3 0.141-5.524 0.147-5.794 0.006-0.368-0.19-0.368-0.184-0.368-3.237 0-2.753 0-2.789 0.129-2.949 0.074-0.092 0.19-0.196 0.264-0.221 0.068-0.031 1.367-0.055 2.876-0.055 2.379-0.006 2.771 0.006 2.931 0.092zM27.554 18.038l0.172 0.165 0.018 2.82c0.018 3.139 0.018 3.115-0.386 3.286-0.313 0.129-5.457 0.129-5.769-0.006-0.386-0.159-0.392-0.196-0.392-3.176 0-1.821 0.025-2.722 0.068-2.857 0.043-0.11 0.159-0.258 0.264-0.319 0.184-0.11 0.325-0.116 3.022-0.104l2.839 0.018 0.166 0.172z"></path>
+                <path d="M13.391 19.166c-0.025 0.018-0.043 0.901-0.043 1.962v1.919h3.924v-3.924h-1.919c-1.061 0-1.944 0.019-1.962 0.043z"></path>
+                <path d="M22.545 21.085v1.962h3.924l-0.012-1.95-0.019-1.943-1.943-0.019-1.949-0.012v1.962z"></path>
+            </symbol>
+            <symbol id="icon-meter" viewbox="0 0 32 32">
+                <path d="M16 2c8.837 0 16 7.163 16 16 0 6.025-3.331 11.271-8.25 14h-15.499c-4.92-2.729-8.25-7.975-8.25-14 0-8.837 7.163-16 16-16zM25.060 27.060c2.42-2.42 3.753-5.637 3.753-9.060h-2.813v-2h2.657c-0.219-1.406-0.668-2.755-1.33-4h-3.327v-2h2.009c-0.295-0.368-0.611-0.722-0.949-1.060-1.444-1.444-3.173-2.501-5.060-3.119v2.178h-2v-2.658c-0.656-0.102-1.324-0.155-2-0.155s-1.344 0.053-2 0.155v2.658h-2v-2.178c-1.887 0.617-3.615 1.674-5.060 3.119-0.338 0.338-0.654 0.692-0.949 1.060h2.009v2h-3.327c-0.662 1.245-1.111 2.594-1.33 4h2.657v2h-2.813c0 3.422 1.333 6.64 3.753 9.060 0.335 0.335 0.685 0.648 1.049 0.94h6.011l1.143-16h1.714l1.143 16h6.011c0.364-0.292 0.714-0.606 1.049-0.94z"></path>
+            </symbol>
+            <symbol id="icon-radioactive" viewbox="0 0 32 32">
+                <path d="M16 29.958c-7.709 0-13.958-6.249-13.958-13.958s6.249-13.958 13.958-13.958c7.709 0 13.959 6.249 13.959 13.958s-6.25 13.958-13.959 13.958zM22.92 5.552c-3.723-2.499-6.879-2.088-6.879-2.088l-0.003 9.008c-1.269 0.032-2.36 0.732-2.958 1.761l-7.627-4.886c0 0-2.021 1.979-2.021 6.464s1.937 6.652 1.937 6.652l7.723-4.676c0.601 1.019 1.687 1.709 2.947 1.741l0.003 9.134c0 0 3.157 0.411 6.879-2.087 3.725-2.499 4.316-5.071 4.316-5.071l-7.982-3.887c0.254-0.486 0.41-1.031 0.41-1.617 0-0.53-0.125-1.027-0.334-1.479l8.074-3.814c-0.001-0.001-0.76-2.657-4.485-5.155zM16.126 18.021c-1.116 0-2.021-0.905-2.021-2.021s0.905-2.021 2.021-2.021c1.116 0 2.020 0.905 2.020 2.021s-0.904 2.021-2.020 2.021z"></path>
+            </symbol>
+            <symbol id="icon-biohazard-solid" viewbox="0 0 36 32">
+                <path d="M35.969 17.719c-0.821-2.444-2.469-4.499-4.633-5.772-1.094-0.648-2.266-1.039-3.453-1.242 0.375-1.109 0.625-2.281 0.625-3.515 0-2.562-0.906-5.046-2.563-7.013-0.156-0.188-0.414-0.226-0.625-0.109-0.203 0.117-0.297 0.375-0.227 0.609 0.281 0.859 0.414 1.64 0.414 2.406 0 4.233-3.36 7.675-7.5 7.675s-7.5-3.444-7.5-7.675c0-0.757 0.141-1.546 0.414-2.406 0.070-0.234-0.023-0.492-0.227-0.609-0.211-0.117-0.469-0.078-0.625 0.109-1.651 1.966-2.564 4.45-2.564 7.010 0 1.234 0.242 2.406 0.625 3.515-1.181 0.204-2.361 0.598-3.455 1.241-2.164 1.281-3.813 3.328-4.649 5.772-0.078 0.234 0.016 0.484 0.219 0.609 0.211 0.125 0.469 0.086 0.625-0.094 0.586-0.679 1.188-1.195 1.828-1.57 3.578-2.117 8.175-0.859 10.244 2.812 2.071 3.663 0.836 8.319-2.742 10.488-0.641 0.383-1.375 0.648-2.242 0.836-0.227 0.055-0.399 0.266-0.399 0.508 0.008 0.25 0.172 0.453 0.406 0.5 2.484 0.484 5.039 0.047 7.206-1.234 1.125-0.656 2.055-1.531 2.828-2.499 0.774 0.969 1.711 1.843 2.836 2.499 2.156 1.281 4.719 1.718 7.194 1.234 0.242-0.047 0.398-0.25 0.406-0.5 0-0.242-0.164-0.453-0.398-0.508-0.867-0.18-1.602-0.453-2.234-0.836-3.586-2.117-4.813-6.825-2.75-10.488 2.071-3.671 6.663-4.928 10.25-2.812 0.633 0.383 1.234 0.891 1.821 1.57 0.156 0.18 0.422 0.219 0.625 0.094 0.213-0.125 0.307-0.375 0.219-0.606zM17.944 20.006c-1.656 0-3-1.343-3-2.999s1.344-2.999 3-2.999 3.001 1.343 3.001 2.999c-0.001 1.656-1.288 2.999-3.001 2.999zM24.063 23.6c0.072 1.423 0.671 2.789 1.701 3.808 2.966-2.215 4.946-5.661 5.194-9.588-1.411-0.386-2.856-0.171-4.098 0.547-0.316 2.064-1.328 3.826-2.797 5.233zM15.831 8.287c1.639-0.409 2.836-0.377 4.345 0.002 1.371-0.611 2.442-1.784 2.968-3.234-1.581-0.681-3.313-1.058-5.137-1.058-1.824 0-3.56 0.374-5.135 1.053 0.522 1.395 1.591 2.626 2.96 3.239zM10.238 27.406c1.029-1.016 1.627-2.387 1.696-3.813-1.468-1.349-2.474-3.167-2.794-5.225-1.208-0.699-2.652-0.943-4.098-0.549 0.248 3.925 2.227 7.375 5.196 9.588z"></path>
+            </symbol>
+        </defs>
+    </svg>
+
+    <header id="header" class="navbar d-flex align-items-center flex-wrap mb-2 px-0">
+        <div class="container-fluid navbar-container">
+            <div class="d-flex flex-wrap align-items-center justify-content-start">
+                <div class="background-brand position-relative lv-menu-1">
+                    <a id="trt" class="navbar-brand brand d-flex align-items-center text-white position-relative mx-3" href="index-5.htm">
+                        <svg class="brand__icon icon icon-risk"><use xlink:href="#icon-risk"></use></svg>
+                        <div class="brand__name mx-2">
+                            <p class="brand__riskProf m-0">РискПроф</p>
+                            <p class="brand__work m-0">охрана труда</p>
+                        </div>
+                        <small class="brand__version"></small>
+                    </a>
+                </div>
+                <div class="my-3 my-lg-0 d-flex align-items-cente menu-dropdown position-relative lv-menu-2">
+                    <div class="">
+                        <a class="menu-dropdown__a" href="https://beta.riskprof.ru/features">
+                            Возможности
+                        </a>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="flex-grow-1 px-5 header-search position-relativ d-none">
+                <form class="w-100 position-relative header-search__form m-0 onBackground" autocomplete="off">
+
+                    <span class="fa fa-search header-search__search position-absolute" aria-hidden="true"></span>
+
+                    <div class="dropdown dropdown_global_search">
+                        <input type="text" class="header-search__input form-control form-control-flush value_global_search" name="search" value="" placeholder="Глобальный поиск...">
+
+                        <ul class="dropdown-menu list_global_search" style="display: none">
+                        </ul>
+                    </div>
+
+                    <span class="position-absolute header-search__spinner fa-pulse translate-middle-y d-none">
+                        <span class="fa fa-spinner" aria-hidden="true"></span>
+                    </span>
+
+                    <span class="header-search__close btn btn-flush position-absolute d-none p-0">
+                        <span class="fa fa-times" aria-hidden="true"></span>
+                    </span>
+                </form>
+            </div>
+
+            <div class="d-flex flex-wrap">
+                <div class="dropdown dropdownMenu our-dropdown pr-4">
+                    <a class="dropdownMenu__a color-black d-flex align-items-center dropdown-toggle our-botton our-botton-sm" href="#" id="dropdownSupport" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <svg class="icon icon-support_agent fs-1_5"><use xlink:href="#icon-support_agent"></use></svg>&nbsp;Поддержка
+                    </a>
+                    <div class="our-dropdown__items dropdown-menu dropdown-menu-right p-0 dropdown-menu-md" aria-labelledby="dropdownSupport">
+                        
+                        <div class="list-group text-center pt-3 pb-2 font-weight-bold background-white">Техническая поддержки</div>
+                        <ul class="list-group list-group-flush">
+                            <li><a class="list-group-item list-group-item-action" role="button" href="tel:+7 (495) 414-10-15"><i class="fa fa-phone mr-3"></i>+7 (495) 414-10-15</a></li>
+                            <li><a class="list-group-item list-group-item-action" role="button" href="mailto:support@riskprof.ru"><i class="fa fa-envelope mr-3"></i>support@riskprof.ru</a></li>
+                            
+                            <li><a class="list-group-item list-group-item-action" role="button" onclick="RiskProf.Bitrix24.Instance.LiveSupportChat(); return false;" href="#"><i class="fa fa-comments mr-3"></i> Онлайн-чат</a></li>
+                        </ul>
+                    </div>
+                </div>
+                    <div><a href="https://id.riskprof.ru//login?returnUrl=https://beta.riskprof.ru/" class="authHeader is our-botton bottonEntrance d-table-cell">Войти</a></div>
+            </div>
+            
+        </div>
+    </header>
+
+    
+    
+    <div class="modal-content" style="border:0;"></div>
+    <div id="main-block-suot" class="main-block main-block-suot">
+        
+
+        
+
+
+
+        
+        <!--<nav id="sidebar" class="">-->
+        <!--Навигационное меню-->
+        <!--<div class="loader text-center" id="loader-2" style="margin-top: 40vh;">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>-->
+        
+
+        
+
+        
+        
+
+<style>
+    body {
+        background-size: cover !important;
+        background-image: url('Content/External/images/Backs/7-5.png') !important;
+    }
+</style>
+
+<section class="jumbotron text-center bg-transparent mb-0">
+    <div class="container">
+        <h1 class="jumbotron-heading mb-3 onBackground">Программное обеспечение РискПроф</h1>
+        <p class="lead text-light mb-4">
+            Полный комплекс инструментов, знаний и услуг по оценке и управлению профессиональными рисками.
+        </p>
+            <div class="pricingTable-signup mb-4 d-flex flex-column flex-sm-row justify-content-center align-items-cente flex-wrap">
+                <a href="#" class="our-botton buttonSignup">Зарегистрироваться</a>
+                <span class="align-self-center mx-4">или</span>
+                <a href="https://id.riskprof.ru//login?returnUrl=https://beta.riskprof.ru/" class="authHeader is our-botton bottonEntrance">Войти</a>
+            </div>
+        <div class="videoHomePage embed-responsive embed-responsive-16by9 mx-auto">
+            <iframe frameborder="0" class="videofancybox embed-responsive-item" src="https://www.youtube.com/embed/ihqdpQqKaTs" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+        </div>
+    </div>
+</section>
+
+<section class="background-white pt-5">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="rp-section-title mb-3">РискПроф &ndash; экспертный портал по охране труда</h2>
+            <p class="rp-section-subtitle mb-5">Эффектный способ внедрения процедуры управления профессиональными рисками</p>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 articleHomePage">
+            <div class="col mb-5">
+                <article class="h-100">
+                    <div class="p-4">
+                        <div class="article-header d-flex align-items-center mb-3">
+                            <i class="fa fa-key fs-2 color-red" aria-hidden="true"></i>
+                            <h3 class="mb-0 ml-2 fs-1_5"><strong>Оценка рисков</strong></h3>
+                        </div>
+                        <div class="article-body text-justify">
+                            Привлечение экспертной организации позволяет быстро получить полный перечень опасностей с учетом требований законодательства и реальной обстановки рабочих местах.
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="col mb-5">
+                <article class="h-100">
+                    <div class="p-4">
+                        <div class="article-header d-flex align-items-center mb-3">
+                            <i class="fa fa-pie-chart fs-2 color-red" aria-hidden="true"></i>
+                            <h3 class="mb-0 ml-2 fs-1_5"><strong>Анализ рисков​</strong></h3>
+                        </div>
+                        <div class="article-body text-justify">
+                            Анализ идентифицированных опасностей в разрезе актуальной организационной структуры, позволяет уделить максимум внимания и средств наиболее важным рискам.
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="col mb-5">
+                <article class="h-100">
+                    <div class="p-4">
+                        <div class="article-header d-flex align-items-center mb-3">
+                            <i class="fa fa-calendar-check-o fs-2 color-red" aria-hidden="true"></i>
+                            <h3 class="mb-0 ml-2 fs-1_5"><strong>План мероприятий​</strong></h3>
+                        </div>
+                        <div class="article-body text-justify">
+                            На основе реестра профессиональных рисков разрабатывается план мероприятий по охране труда, направленный на снижение уровней наиболее приоритетных рисков.
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="col mb-5">
+                <article class="h-100">
+                    <div class="p-4">
+                        <div class="article-header d-flex align-items-center mb-3">
+                            <i class="fa fa-graduation-cap fs-2 color-red" aria-hidden="true"></i>
+                            <h3 class="mb-0 ml-2 fs-1_5"><strong>Обучение работников​</strong></h3>
+                        </div>
+                        <div class="article-body text-justify">
+                            Учебные курсы, адаптированные для руководителей, мастеров, специалистов по охране труда охватывают полный цикл процедуры «Управление профессиональными рисками».
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="col mb-5">
+                <article class="h-100">
+                    <div class="p-4">
+                        <div class="article-header d-flex align-items-center mb-3">
+                            <i class="fa fa-refresh fs-2 color-red" aria-hidden="true"></i>
+                            <h3 class="mb-0 ml-2 fs-1_5"><strong>Переоценка рисков</strong></h3>
+                        </div>
+                        <div class="article-body text-justify">
+                            Редактор реестра рисков предоставляет возможность самостоятельно актуализировать сведения об опасностях, уровнях профессиональных рисков и план мероприятий.
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="text-center py-5">
+    <div class="container">
+        <h2 class="rp-section-title onBackground">РискПроф &ndash; электронные тренажеры по идентификации опасностей</h2>
+        <div class="videoHomePage embed-responsive embed-responsive-16by9 mx-auto mt-5">
+            <iframe class="videofancybox embed-responsive-item" src="https://www.youtube.com/embed/KRChTFLCg4o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+        </div>
+    </div>
+</section>
+<section class="text-center py-5 bg-white">
+    <div class="container">
+        <h2 class="rp-section-title mb-3">Официальные партнёры РискПроф в субъектах Российской Федерации</h2>
+        <p class="rp-section-subtitle mb-5">Наиболее компетентные организации в сфере оценки профессиональных рисков. Рекомендуем!</p>
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered text-left">
+                <thead class="text-center">
+                    <tr>
+                        
+                        <th scope="col">Экспертная организация</th>
+                        <th scope="col">Адрес</th>
+                        <th scope="col">Сайт</th>
+                        <th scope="col">Электронная почта</th>
+                        <th scope="col">Телефон</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        
+                        <td>ООО «Смарта»</td>
+                        <td>Москва, ул. Скаковая,<br>дом 32, строение 2</td>
+                        <td><a href="https://smarta.life" target="_blank">smarta.life</a></td>
+                        <td><a href="mailto:sales@smarta.life">sales@smarta.life</a></td>
+                        <td>
+                            <a href="tel:8 800 350 85 21">8 800 350 85 21</a><br>
+                            <a href="tel:+7 (977) 490 31 24">+7 (977) 490 31 24</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        
+                        <td>Блог-Инженера</td>
+                        <td></td>
+                        <td><a href="https://блог-инженера.рф/" target="_blank">блог-инженера.рф</a></td>
+                        <td><a href="riskprof@блог-инженера.рф">riskprof@блог-инженера.рф</a></td>
+                        <td><a href="tel: 8 (800) 250-27-53"> 8 (800) 250-27-53</a></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+<script>
+    $(document).ready(function () {
+        RiskProf.DependencyResolvedManager.Registration('currentSearchProviders', RiskProf.ProjectsSearchProvider);
+        $('.value_global_search').attr('placeholder', 'Поиск по проектам...');
+
+        let provider = RiskProf.DependencyResolvedManager.Resolved('currentSearchProviders').ProjectsProvider;
+
+        provider.ShowAllResultsUrl = provider.ShowAllResultsUrl_FromAnotherPage.replace('{cookieName}', provider.CookieName);
+    });
+</script>
+        
+        
+
+        
+
+        
+    </div>
+    <footer class="footer mt-auto">
+        <div class="container-fluid ">
+            <div class="footer__container">
+                <div class="footer__info text-center py-2 fs-0_8">РискПроф &ndash; экспертный портал по охране труда</div>
+            </div>
+        </div>
+
+    </footer>
+    <button id="scrollToTopButton" onclick="scrollToTop(300,3);"><i class="fa fa-arrow-up"></i></button>
+    
+
+    <script src="Content/External/JQuery/localization/messages_ru.min-5.js"></script>
+    <script src="Content/External/Bootstrap/js/bootstrap-notify.js"></script>
+    <script src="Content/External/jstree.min-5.js"></script>
+    <script src="Content/External/jquery.unobtrusive-ajax-5.js"></script>
+    <script src="Content/External/JQuery/jquery.contextMenu.min-5.js"></script>
+    <script src="Content/External/JQuery/bootstrap-dropdownhover.min-5.js"></script>
+    <script src="Content/External/JQuery/clipboard.min-5.js"></script>
+    <script src="Content/External/JQuery/jquery.blockUI-5.js"></script>
+    <script src="Content/External/JQuery/jquery.countdown-5.js"></script>
+    <script src="Content/External/Bootstrap/js/bootstrap-dialog.min-5.js"></script>
+    <script src="Content/System/js.cookie-5.js?v=2021.11.19"></script>
+    <script src="Content/External/JQuery/bootstrap-datetimepicker.min-5.js"></script>
+    <script src="Content/External/Bootstrap/js/bootstrap-select-5.js"></script>
+    <script src="Content/External/JQuery/jquery.ba-bbq-5.js"></script>
+    <script src="Content/System/spinner-5.js?v=2021.11.19"></script>
+    <script src="Content/External/Scripts/jquery.inputmask-5.js"></script>
+    <script src="Content/System/ModalDialogs-6.js?v=2022.05.13"></script>
+    <script src="Content/System/RiskProf/riskprof.config-5.js?v=2022.02.16"></script>
+    <script src="Content/System/RiskProf.Bitrix/riskprof.bitrix-5.js?v=2021.11.30"></script>
+    <script src="Content/System/ModalDialogPresets-6.js?v=2022.05.13"></script>
+    <script src="Content/System/constantValues-5.js?v=2021.11.19"></script>
+    <script src="Content/System/RiskProf.Ident/riskprof.ident-5.js?v=2022.02.16"></script>
+    <script src="Content/System/cookiePresets-5.js?v=2022.03.10"></script>
+
+
+    <script src="Content/External/Bootstrap/js/select2.min-5.js"></script>
+    <script src="Content/External/jquery.multi-select.min-5.js"></script>
+    <script src="Content/External/jquery.okayNav-min-5.js"></script>
+
+    
+
+    
+
+    <script src="Content/System/Search/riskprof.search-5.js"></script>
+    <script src="Content/System/Search/Providers/provider.projects-5.js"></script>
+    <script src="Content/System/Search/Providers/provider.workplaces-5.js"></script>
+
+    <script>
+    mainBlockMinHeight = 0;
+    $(document).ready(function () {
+        $(window).resize(function () {
+            RiskProf.AuthClient.Instance.Resize();
+            var navPanel = $('#nav_panel').height();
+            var navInfo = $('#nav_info').height();
+            var sidebar = $('#sidebar').width();
+            $("#sidebar").css({ 'height': 'calc(100vh - 16px - 5px - ' + navPanel + 'px - ' + navInfo + 'px)' });
+            $("#head_content").css({ 'width': 'calc(100% - ' + sidebar + 'px)' });
+            $("#head_content").css({ 'margin-left': sidebar + 'px' });
+
+
+            let header = $('#header').outerHeight(true);
+            let footer = $('.footer').outerHeight(true);
+            let mainBlockHeader = $('.main-block__header').outerHeight(true);
+            $(".main-block").css({ 'min-height': `calc(100vh - ${header}px - ${footer}px)` });
+            let mainBlock = $('.main-block').outerHeight(true),
+                levelJumbotron = +$('.level-jumbotron').outerHeight(true);
+            let result = mainBlock - mainBlockHeader - levelJumbotron
+            mainBlockMinHeight = result;
+            $(".main-block__content").css({ 'height': `${result}px` });
+        });
+        RiskProf.AuthClient.Instance.InitUserToken(function () {
+            RiskProf.AuthClient.Instance.GetHeader();
+            RiskProf.AuthClient.Instance.GetNavMenu();
+            setTimeout(function () { $(window).resize(); }, 2000);
+        });
+        RiskProf.Bitrix24.Instance.Init();
+        
+        $(window).resize();
+    });
+    //$(document).on('click', '#b24-widget', function () {
+    //    RiskProf.Bitrix24.Instance.LiveSupportChat();
+    //});
+
+    $(document).on('click', '#js-nav-menu > li > a', function () {
+        if (!$("#sidebar").hasClass("active")) {
+            $(this).parent().toggleClass('active');
+            document.cookie = $(this).parent().attr("id") + '=' + $(this).parent().attr("class") + '; path=/';
+        }
+    });
+
+    $(document).on('click', 'a[href="#"]', function (e) {
+        e.preventDefault();
+    });
+
+    $(document).tooltip({
+        selector: '[data-toggle="tooltip"]'
+    });
+
+    $(document).on('click', '.manualButton', function () {
+        var url = 'https://edu.riskprof.ru/learn/showcourse?courseId=5760&isPartial=true';
+        ModalDialogV3_showIframe(url, '100%', 'calc(100% - 2rem)');
+    });
+
+        $(document).on('click', '.btn-profile-click', function () {
+            SpinnerFadeIn();
+            var url = 'https://id.riskprof.ru//user/getprofileview';
+            var data = {
+                'userId': '2984'
+            }
+            this.UserToken = Cookies.get('RiskProf_UserToken');
+            $.ajax({
+                "url": url,
+                headers: { 'RiskProf_UserToken': this.UserToken },
+                "data": data,
+                "type": "Post",
+                "success": function (data) {
+                    ModalDialogV3_show(data);
+                },
+                "error": function (data) {
+                    ModalDialogV3_show(data.responseText);
+                }
+            });
+            SpinnerFadeOut();
+            return false;
+
+    });
+
+    $(document).find('.value_global_search').on('keyup', function (e) {
+        //Игнорируем клавиши, используемые для смены раскладки клавиатуры (Shift, Alt, Ctrl), и клавиши-стрелки
+        if ((e.keyCode >= 16 && e.keyCode <= 18) || (e.keyCode >= 37 && e.keyCode <= 40))
+            return;
+
+        var searchList = $('.list_global_search');
+        var searchString = $(this).val();
+
+        searchList.css('display', 'none');
+
+        if (searchString.length >= 1)
+            RiskProf.Search.Instance.Find(RiskProf.DependencyResolvedManager.Resolved('currentSearchProviders'), searchString, searchList, e.keyCode == 13);
+        else
+            clearTimeout(RiskProf.Search.Instance._timerId);
+    });
+
+    $(document).find('.header-search__form').on('submit', function (e) {
+        e.preventDefault();
+    });
+
+    $(document).on('click', '#userAdmin', function () {
+        let url = 'https://admin.riskprof.ru/setAuthCookie?userToken=48bbb3d6c3a94871b60c2b3693f637bd&amp;returnUrl=https://admin.riskprof.ru/user/GetList';
+        ModalDialogV3_showIframe(url, '100%', '60%', false);
+    });
+
+    
+    </script>
+</body>
+</html>
